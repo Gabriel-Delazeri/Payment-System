@@ -36,6 +36,11 @@ abstract class AbstractRepository
         return $this->model->destroy($id);
     }
 
+    public function findFirstWhere($whereColumn, $valueColumn)
+    {
+        return $this->model->where($whereColumn, $valueColumn)->first();
+    }
+
     protected function resolveModel()
     {
         return app($this->model);
